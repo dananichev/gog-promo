@@ -2,5 +2,5 @@
 
 npm run dist
 
-rm -rf /home/dananichev/projects/tolookat.me/public_html/gog-promo/*
-mv dist/* /home/dananichev/projects/tolookat.me/public_html/gog-promo/
+rm -rf /projects/tolookat.me/public_html/gog-promo/*
+mv dist/* /projects/tolookat.me/public_html/gog-promo/

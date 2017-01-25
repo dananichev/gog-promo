@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist/*",
-    "prepare": "mkdir -p dist && cp -r src/ dist/",
+    "prepare": "mkdir -p dist && cp -r src/* dist/",
     "dist": "echo 'Building...' && npm run clean && npm run prepare && echo 'Done!'",
     "test": "echo 'Everything is awesome'"
   },

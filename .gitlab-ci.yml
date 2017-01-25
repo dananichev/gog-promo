@@ -4,12 +4,21 @@ stages:
   - test
   - deploy
 
+cache:
+  paths:
+  - node_modules/
+
 Code Style:
   script:
       - npm test
   type: test
 
 Deploy:
+  environment:
+    name: production
+    url: https://tolookat.me/gog-promo
   script:
       - ./bin/deploy.sh
   type: deploy
+  only:
+  - master
