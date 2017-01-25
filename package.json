@@ -1,0 +1,33 @@
+{
+  "name": "gog-promo",
+  "version": "1.0.0",
+  "description": "Small page with GOG.com promo",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist/*",
+    "prepare": "mkdir -p dist && cp -r src/ dist/",
+    "dist": "echo 'Building...' && npm run clean && npm run prepare && echo 'Done!'",
+    "test": "echo 'Everything is awesome'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/dananichev/gog-promo.git"
+  },
+  "keywords": [
+    "gog.com",
+    "promo"
+  ],
+  "author": "Dmitry Ananichev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/dananichev/gog-promo/issues"
+  },
+  "homepage": "https://gitlab.com/dananichev/gog-promo#README",
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0"
+  }
+}

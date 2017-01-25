@@ -1,0 +1,13 @@
+stages:
+  - test
+  - deploy
+
+Code Style:
+  script:
+      - npm test
+  type: test
+
+Deploy:
+  script:
+      - ./bin/deploy.sh
+  type: deploy
