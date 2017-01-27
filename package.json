@@ -4,9 +4,9 @@
   "description": "Small page with GOG.com promo",
   "main": "index.js",
   "scripts": {
-    "check": "nsp check",
+    "check": "./node_modules/.bin/nsp check",
     "clean": "rm -rf dist/*",
-    "code-style": "eslint -c ./.eslintrc.yml ./src/scripts",
+    "code-style": "./node_modules/.bin/eslint -c ./.eslintrc.yml ./src/scripts",
     "dist": "npm run clean && NODE_ENV=production webpack -p --config ./webpack.config.prod.js --output-path dist",
     "start": "webpack-dev-server --host 0.0.0.0 --content-base dist --progress --inline --hot --compress",
     "test": "echo 'Everything is awesome'"
