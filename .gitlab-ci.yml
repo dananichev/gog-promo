@@ -10,8 +10,19 @@ cache:
 
 Code Style:
   script:
+      - npm run code-style
+  type: test
+
+Tests:
+  script:
       - npm test
   type: test
+
+NPM Security Check:
+  script:
+      - npm run check
+  type: test
+  allow_failure: true
 
 Deploy:
   environment:

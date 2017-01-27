@@ -4,9 +4,10 @@
   "description": "Small page with GOG.com promo",
   "main": "index.js",
   "scripts": {
+    "check": "nsp check",
     "clean": "rm -rf dist/*",
-    "prepare": "mkdir -p dist && cp -r src/* dist/",
-    "dist": "echo 'Building...' && npm run clean && npm run prepare && echo 'Done!'",
+    "code-style": "eslint -c ./.eslintrc.yml ./src/scripts",
+    "dist": "npm run clean && NODE_ENV=production webpack -p --config ./webpack.config.prod.js --output-path dist",
     "start": "webpack-dev-server --host 0.0.0.0 --content-base dist --progress --inline --hot --compress",
     "test": "echo 'Everything is awesome'"
   },
@@ -27,6 +28,7 @@
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.1.8",
     "css-loader": "^0.26.1",
     "eslint": "^3.14.0",
