@@ -21,6 +21,7 @@
     text-align: justify;
     box-sizing: border-box;
     padding: 0 30px;
+    overflow: hidden;
 
     &:after {
       content: "";
@@ -36,6 +37,31 @@
     min-height: 100%;
     box-sizing: border-box;
     vertical-align: top;
+    position: relative;
+
+    & .background {
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      &-dd {
+        top: -200px;
+        left: -30px;
+        opacity: 0.25;
+      }
+
+      &-bd {
+        top: -145px;
+        left: -40px;
+        opacity: 0.25;
+      }
+
+      &-d2 {
+        top: -139px;
+        left: -185px;
+        opacity: 0.85;
+      }
+    }
 
     &-description {
       box-sizing: border-box;
@@ -76,21 +102,44 @@
 
     & .logo {
       margin: 0 auto;
+      position: relative;
 
+      &-divinity-2.active,
       &-divinity-2 {
         margin-top: 52px;
         margin-bottom: 41px;
       }
 
+      &-divine-divinity.active,
       &-divine-divinity {
         margin-top: 35px;
         margin-bottom: 12px;
       }
 
+      &-beyond-divinity.active,
       &-beyond-divinity {
         margin-top: 34px;
         margin-bottom: 14px;
       }
+
+      &-divinity-2,
+      &-divine-divinity,
+      &-beyond-divinity {
+        display: block;
+      }
+
+      &-divinity-2.active,
+      &-divine-divinity.active,
+      &-beyond-divinity.active {
+        display: none;
+      }
+    }
+
+    &-description,
+    &-status,
+    & .logo {
+      position: relative;
+      z-index: 10;
     }
   }
 
@@ -120,6 +169,22 @@
       display: block;
       color: #b2b2b2;
       text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3);
+    }
+
+    & .logo {
+      position: relative;
+
+      &-divinity-2,
+      &-divine-divinity,
+      &-beyond-divinity {
+        display: none;
+      }
+
+      &-divinity-2.active,
+      &-divine-divinity.active,
+      &-beyond-divinity.active {
+        display: block;
+      }
     }
   }
 
