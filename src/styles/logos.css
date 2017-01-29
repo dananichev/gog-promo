@@ -1,0 +1,39 @@
+.logo {
+  background-image: url('../assets/logos/out/sprite.png');
+}
+
+.logo-divinity-2 {
+  background-position: -0px -0px;
+  width: 238px;
+  height: 70px;
+
+  &.active {
+    background-position: -0px -83px;
+    width: 264px;
+    height: 70px;
+  }
+}
+
+.logo-beyond-divinity {
+  background-position: -0px -168px;
+  width: 208px;
+  height: 115px;
+
+  &.active {
+    background-position: -0px -411px;
+    width: 236px;
+    height: 115px;
+  }
+}
+
+.logo-divine-divinity {
+  background-position: -0px -283px;
+  width: 207px;
+  height: 116px;
+
+  &.active {
+    background-position: -0px -553px;
+    width: 235px;
+    height: 116px;
+  }
+}

@@ -4,9 +4,11 @@
   "description": "Small page with GOG.com promo",
   "main": "index.js",
   "scripts": {
+    "check": "nsp check",
     "clean": "rm -rf dist/*",
-    "prepare": "mkdir -p dist && cp -r src/* dist/",
-    "dist": "echo 'Building...' && npm run clean && npm run prepare && echo 'Done!'",
+    "code-style": "eslint -c ./.eslintrc.yml ./src/scripts",
+    "dist": "npm run clean && NODE_ENV=production webpack -p --config ./webpack.config.prod.js --output-path dist",
+    "start": "webpack-dev-server --host 0.0.0.0 --content-base dist --progress --inline --hot --compress",
     "test": "echo 'Everything is awesome'"
   },
   "repository": {
@@ -24,10 +26,32 @@
   },
   "homepage": "https://gitlab.com/dananichev/gog-promo#README",
   "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.1.8",
+    "css-loader": "^0.26.1",
     "eslint": "^3.14.0",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.0",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.26.0",
+    "nsp": "^2.6.2",
+    "postcss-clean": "^1.0.2",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-font-magician": "^1.6.0",
+    "postcss-import": "^9.1.0",
+    "postcss-loader": "^1.2.2",
+    "postcss-reporter": "^3.0.0",
+    "postcss-url": "^5.1.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0"
+  },
+  "dependencies": {
+    "normalize.css": "^5.0.0"
   }
 }

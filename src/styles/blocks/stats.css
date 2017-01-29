@@ -1,0 +1,220 @@
+@import "../variables.css";
+
+:root {
+  --stats-goals-bg-color: #cbcbcb;
+  --stats-goals-border-color: #a6a6a6;
+}
+
+.stats {
+  text-align: justify;
+  width: 281px;
+  display: inline-block;
+  vertical-align: top;
+
+  &:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+  }
+
+  &-count {
+    font-family: DS-Digital, sans-serif;
+    font-weight: 700;
+    font-size: 3.3333333em;
+    line-height: 0.7em;
+    position: relative;
+    overflow: hidden;
+    width: 204px;
+    height: 42px;
+    margin: 27px auto 0;
+
+    &-backlight,
+    &-value {
+      position: absolute;
+      top: 0;
+    }
+
+    &-backlight span,
+    &-value span {
+      position: relative;
+      float: left;
+      text-align: right;
+      border-radius: 3px;
+      box-sizing: border-box;
+      padding: 6px;
+      width: 30px;
+      margin-right: 2px;
+
+      &:nth-child(3):after {
+        position: absolute;
+        content: "";
+        width: 3px;
+        height: 3px;
+        right: -8px;
+        bottom: 0;
+      }
+
+      &:nth-child(4) {
+        margin-left: 11px;
+      }
+    }
+
+    &-backlight span {
+      color: rgba(255, 255, 255, 0.15);
+      background-image: linear-gradient(to top, rgb(191,191,191) 0%, rgb(166,166,166) 100%);
+      box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.85);
+      z-index: 1;
+
+      &:nth-child(3) {
+        &:after {
+          background: #9b9b9b;
+          box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.85);
+        }
+      }
+    }
+
+    &-value span {
+      color: #fff;
+      z-index: 2;
+    }
+  }
+
+  &-title,
+  &-description {
+    line-height: 1.5em;
+    text-align: center;
+  }
+
+  &-title {
+    font-weight: 600;
+    margin-top: 25px;
+  }
+
+  &-description {
+    font-weight: 400;
+  }
+
+  &-thumbnail {
+    position: relative;
+    margin: 15px auto 0;
+    width: 268px;
+    height: 154px;
+    background: url(../../assets/thumbnail.png) no-repeat;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 11px;
+      width: 246px;
+      height: 132px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    &-progress {
+      width: 80px;
+      height: 79px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -39px;
+      margin-left: -40px;
+      z-index: 10;
+
+      &-circle {
+        transform: rotate(-90deg);
+      }
+
+      &-value {
+        stroke-dasharray: 232.36;
+        stroke-dashoffset: 23.236;
+      }
+
+      &-bg {
+        width: 83px;
+        height: 83px;
+        position: absolute;
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        margin-top: -41px;
+        margin-left: -41px;
+      }
+
+      &-text {
+        width: 51px;
+        font-weight: 700;
+        font-size: 2.08333333em;
+        color: #fff;
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        margin-top: -14px;
+        margin-left: -25px;
+      }
+    }
+  }
+
+
+  &-goals {
+    position: relative;
+    margin: 10px auto 0;
+    width: 260px;
+    height: 20px;
+    background: var(--stats-goals-bg-color);
+    box-sizing: border-box;
+    border: 1px solid var(--stats-goals-border-color);
+    border-radius: 5px;
+    text-align: justify;
+    vertical-align: top;
+    font-size: var(--small-font-size);
+    line-height: 2;
+    color: #666666;
+
+    &:after {
+      content: "";
+      width: 100%;
+      display: inline-block;
+    }
+
+    &-item {
+      padding: 0 9px;
+      height: 18px;
+      float: left;
+      border-left: 1px solid var(--stats-goals-border-color);
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &.active,
+      &-selected {
+        cursor: default;
+      }
+
+      &-selected {
+        background-image: linear-gradient(to top, rgb(217,217,217) 0%, rgb(166,166,166) 100%);
+        box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      &.active {
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 2px;
+          right: 0;
+          top: 4px;
+          bottom: 0;
+          background: var(--stats-goals-bg-color) url(../../assets/check-simple.png) no-repeat center top;
+        }
+      }
+    }
+
+  }
+}

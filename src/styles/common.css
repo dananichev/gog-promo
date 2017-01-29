@@ -1,0 +1,80 @@
+@import "variables.css";
+
+html, body {
+  background: url(../assets/background.png) 24px 49px;
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--base-font-size);
+  color: var(--base-color);
+  text-align: left;
+}
+
+body {
+  &:before {
+    content: "";
+    height: 369px;
+    width: 100%;
+    position: absolute;
+    top: -58px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.50196) 0%, rgba(212,212,212,0) 100%);
+  }
+}
+
+html, body, .main-wrapper {
+  height: 100%;
+}
+
+* html .main-wrapper {
+  height: 55%;
+}
+
+body > .main-wrapper {
+  height: auto;
+  min-height: 100%;
+}
+
+.menu-wrapper {
+  position: relative;
+  width: 100%;
+  height: 53px;
+  background: url(../assets/top-menu-repeat-bg.png) repeat-x left top;
+
+  &:before {
+    content: "";
+    position: absolute;
+    margin: 0 auto;
+    width: var(--min-width);
+    height: 48px;
+    background: url(../assets/top-menu.png) no-repeat center top;
+    left: 0;
+    right: 0;
+  }
+}
+
+.content {
+  font-size: 1em;
+  height: auto;
+  min-height: 100%;
+}
+
+.promo-info {
+  width: 890px;
+  margin: 0 auto;
+  min-height: 350px;
+  text-align: justify;
+
+  &:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+
+.footer-wrapper {
+  clear: both;
+  height: 100px;
+}
+
+.footer {
+  text-align: center;
+}

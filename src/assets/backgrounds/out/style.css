@@ -1,0 +1,20 @@
+
+.background {
+  background-image: url('./sprite.png');
+}
+
+.background-d2 {
+  background-position: -0px -0px;
+  width: 583px;
+  height: 424px;
+}
+.background-bd {
+  background-position: -0px -424px;
+  width: 367px;
+  height: 504px;
+}
+.background-dd {
+  background-position: -0px -928px;
+  width: 449px;
+  height: 555px;
+}
