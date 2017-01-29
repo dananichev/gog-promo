@@ -9,8 +9,19 @@ module.exports = {
           '600': ['woff, woff2'],
           '700': ['woff, woff2'],
         },
+      },
+      custom: {
         'DS-Digital': {
-          '700': ['woff, woff2'],
+          variants: {
+            normal: {
+              700: {
+                url: {
+                  woff2: './src/assets/fonts/ds-digib-webfont.woff2',
+                  woff: './src/assets/fonts/ds-digib-webfont.woff',
+                },
+              },
+            },
+          },
         },
       }
     }),
