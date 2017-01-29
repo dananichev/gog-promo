@@ -1,2 +1,11 @@
 @import "normalize.css";
 @import "common.css";
+@import "backgrounds.css";
+@import "logos.css";
+@import "icons.css";
+
+@import "blocks/content.css";
+@import "blocks/incentive.css";
+@import "blocks/games-bundle.css";
+@import "blocks/goodies.css";
+@import "blocks/stats.css";

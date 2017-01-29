@@ -1,4 +1,16 @@
 :root {
-  --base-font-size: 16px;
+  --base-font-size: 12px;
   --base-color: #000;
+
+  --button-font-size: 1.08333em;
+  --input-font-size: 2.08333em;
+  --small-heading-font-size: 1.16666667em;
+  --small-font-size: 0.83333em;
+
+  --big-heading-font-size: 2.6666em;
+  --big-heading-color: #404040;
+  --big-heading-font-weight: 300;
+  --big-heading-bundle-font-weight: 400;
+
+  --min-width: 950px;
 }

@@ -1,0 +1,131 @@
+@import "../variables.css";
+
+:root {
+  --bundle-background: #e1e1e1;
+}
+
+.games-bundle {
+  height: 444px;
+  width: var(--min-width);
+  box-sizing: border-box;
+  margin: 49px auto 0;
+  background: var(--bundle-background);
+  border: 1px solid var(--bundle-background);
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+  margin-bottom: 69px;
+
+  &-list {
+    height: 274px;
+    border-bottom: 1px solid rgb(193, 193, 193);
+    text-align: justify;
+    box-sizing: border-box;
+    padding: 0 30px;
+
+    &:after {
+      content: "";
+      width: 100%;
+      display: inline-block;
+    }
+  }
+
+  &-item {
+    text-align: center;
+    display: inline-block;
+    width: 280px;
+    min-height: 100%;
+    box-sizing: border-box;
+    vertical-align: top;
+
+    &-description {
+      box-sizing: border-box;
+      padding: 15px 0;
+      border-bottom: 1px solid #cdcdcd;
+      border-top: 1px solid #cdcdcd;
+      font-weight: 400;
+      font-size: var(--base-font-size);
+      line-height: 1.5;
+
+      & strong {
+        font-weight: 600;
+      }
+
+      & a {
+        color: var(--base-color);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--base-color);
+      }
+    }
+
+    &-status {
+      margin-top: 3px;
+
+      & strong {
+        font-weight: 600;
+      }
+
+      & .icon {
+        position: relative;
+        top: 7px;
+      }
+
+      & .icon-error {
+        display: inline-block;
+      }
+    }
+
+    & .logo {
+      margin: 0 auto;
+
+      &-divinity-2 {
+        margin-top: 52px;
+        margin-bottom: 41px;
+      }
+
+      &-divine-divinity {
+        margin-top: 35px;
+        margin-bottom: 12px;
+      }
+
+      &-beyond-divinity {
+        margin-top: 34px;
+        margin-bottom: 14px;
+      }
+    }
+  }
+
+  &-item.active:first-child {
+    &:after {
+      display: none;
+    }
+  }
+
+  &-item.active {
+    position: relative;
+
+    & .icon-error {
+      display: none;
+    }
+
+    & .icon-check {
+      display: inline-block;
+    }
+
+    &:after {
+      position: absolute;
+      left: -25px;
+      top: 68px;
+      content: "+";
+      font-size: 4em;
+      display: block;
+      color: #b2b2b2;
+      text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &-price {
+    height: 167px;
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45);
+    background-color: rgb(230, 230, 230);
+  }
+}

@@ -1,0 +1,42 @@
+.goodies {
+  text-align: justify;
+  width: 550px;
+  display: inline-block;
+  vertical-align: top;
+
+  & .content-subheading {
+    margin-bottom: 38px;
+  }
+
+  &:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+  }
+
+  &-item {
+    line-height: 1.5;
+    font-weight: 400;
+    display: inline-block;
+    width: 29.18918919%;
+    text-align: center;
+    min-height: 160px;
+    vertical-align: top;
+
+    &-title {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    &-icon {
+      height: 33px;
+      vertical-align: bottom;
+      display: inline-block;
+      margin: 0 auto 10px;
+    }
+
+    & .icon {
+      display: inline-block;
+    }
+  }
+}

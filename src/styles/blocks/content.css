@@ -1,0 +1,47 @@
+@import "../variables.css";
+
+.content {
+  position: relative;
+  padding-top: 47px;
+
+  &-heading {
+    font-size: var(--big-heading-font-size);
+    color: var(--big-heading-color);
+    text-align: center;
+    font-weight: var(--big-heading-font-weight);
+    margin: 0;
+    padding: 0;
+
+    &-bundle {
+      font-weight: var(--big-heading-bundle-font-weight);
+    }
+  }
+
+  &-subheading {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    font-size: var(--small-heading-font-size);
+    font-weight: var(--big-heading-font-weight);
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 20%;
+      border: 1px solid #bfbfbf;
+      height: 0;
+      left: 0;
+      top: 7px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 20%;
+      border: 1px solid #bfbfbf;
+      height: 0;
+      right: 0;
+      top: 7px;
+    }
+  }
+}
