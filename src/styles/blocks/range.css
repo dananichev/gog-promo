@@ -5,7 +5,7 @@
   --thumb-color: #fff;
 
   --thumb-height: 17px;
-  --thumb-width: 33px;
+  --thumb-width: 34px;
   --thumb-background: url(../../assets/slider-thumb.png) no-repeat left top;
 
   --track-width: 100%;
@@ -23,7 +23,7 @@
 
 input[type=range] {
   position: relative;
-  z-index: 4;
+  z-index: 1;
   -webkit-appearance: none;
   width: 100%;
   background: transparent;
@@ -34,6 +34,11 @@ input[type=range] {
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
+    position: relative;
+  }
+
+  &::-moz-focus-outer {
+    border: none;
   }
 
   &::-ms-track {
@@ -72,28 +77,26 @@ input[type=range] {
   }
 
   &::-webkit-slider-runnable-track {
+    box-shadow: none;
+    background: transparent;
+    border: none;
     width: var(--track-width);
     height: var(--track-height);
     cursor: pointer;
-    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.75),inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
-    background-image: var(--track-color);
-    border-radius: var(--track-radius);
-    border: var(--track-border-width) solid var(--track-border-color);
     box-sizing: border-box;
   }
 
   &:focus::-webkit-slider-runnable-track {
-    background-image: var(--track-color);
+    background: transparent;
   }
 
   &::-moz-range-track {
     width: var(--track-width);
     height: var(--track-height);
     cursor: pointer;
-    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.75),inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
-    background-image: var(--track-color);
-    border-radius: var(--track-radius);
-    border: var(--track-border-width) solid var(--track-border-color);
+    box-shadow: none;
+    background: transparent;
+    border: none;
     box-sizing: border-box;
   }
 
@@ -109,27 +112,25 @@ input[type=range] {
   }
 
   &::-ms-fill-lower {
-    background-image: var(--track-color);
-    border-radius: var(--track-radius);
-    border: var(--track-border-width) solid var(--track-border-color);
-    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.75),inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: none;
+    background: transparent;
+    border: none;
     box-sizing: border-box;
   }
 
   &:focus::-ms-fill-lower {
-    background-image: var(--track-color);
+    background: transparent;
   }
 
   &::-ms-fill-upper {
-    background-image: var(--track-color);
-    border-radius: var(--track-radius);
-    border: var(--track-border-width) solid var(--track-border-color);
-    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.75),inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: none;
+    background: transparent;
+    border: none;
     box-sizing: border-box;
   }
 
   &:focus::-ms-fill-upper {
-    background-image: var(--track-color);
+    background: transparent;
   }
 }
 
@@ -165,45 +166,43 @@ input[type=range] {
     right: -53px;
   }
 
+  &-track,
   &-fill {
     position: absolute;
     top: 0;
     left: 0;
     height: var(--track-height);
+  }
+
+  &-track {
+    width: var(--track-width);
+    cursor: pointer;
+    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.75),inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    background-image: var(--track-color);
+    border-radius: var(--track-radius);
+    border: var(--track-border-width) solid var(--track-border-color);
+    box-sizing: border-box;
+  }
+
+  &-fill {
     width: 24.2%;
     background-image: linear-gradient(to top, rgb(124,169,0) 0%, rgb(173,201,0) 100%);
     box-shadow: inset 0px 1px 0px 0px rgba(231, 255, 0, 0.67);
     border-radius: 5px 0 0 5px;
-    z-index: 4;
   }
 }
 
 .range-value {
   position: absolute;
-  top: 27px;
-  min-width: 224px;
+  top: 23px;
+  width: 224px;
   height: 58px;
   box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid rgb(179, 179, 179);
   background-image: linear-gradient(to top, rgb(207,207,207) 0%, rgb(194,194,194) 100%);
   box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.75);
-  left: 188.5px;
-  transform: translateX(-50%);
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: -9px;
-    left: 50%;
-
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-
-    border-bottom: 9px solid rgb(194,194,194);
-  }
+  margin-left: -120px;
 
   &-input,
   &-button {
@@ -282,8 +281,8 @@ input[type=range] {
 .range-marks {
   &-item {
     position: absolute;
+    z-index: 2;
     top: 4px;
-    z-index: 10;
     border-radius: 50%;
     background-image: linear-gradient(to top, rgb(58,58,58) 0%, rgb(30,30,30) 100%);
     box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.35),inset 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
@@ -292,7 +291,7 @@ input[type=range] {
 
     &-tooltip {
       position: absolute;
-      top: -24px;
+      top: -28px;
       font-weight: 400;
       font-size: var(--small-font-size);
       min-width: 80px;
