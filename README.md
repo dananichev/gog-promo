@@ -1,10 +1,12 @@
-# Build 
+# Notes
+
+## Build 
 
 * run ``npm install``
 * run ``npm run disst``
 * ready-to-use bundle with all static files will be available inside ``./dist`` folder (keep in mind -- all files referenced in html/css/js has relative paths to index.html)
 
-# Sprite generation
+## Sprite generation
 
 To generate sprites for icons/logos you can use images inside ``src/assets/logos|icons|backgrounds`` folders.
 For example, you can use ``sprity`` (https://github.com/sprity/sprity) for this purpose. But while it generates sprites pretty correctly the result css not entirely correct (you will need to fix some background-offsets by yourself).

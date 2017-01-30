@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#9cbd00">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GOG.com -- Divinity Promo</title>
 </head>
 <body>
@@ -36,6 +39,8 @@
         <div class="games-bundle">
             <div class="games-bundle-list">
                 <div class="games-bundle-item active">
+                    <div class="background background-dd"></div>
+                    <div class="logo logo-divine-divinity"></div>
                     <div class="logo logo-divine-divinity active"></div>
                     <div class="games-bundle-item-description">
                         <a href="#" target="_blank">Divine Divinity</a> (normal price $5.99)<br />
@@ -48,7 +53,9 @@
                     </div>
                 </div>
                 <div class="games-bundle-item">
+                    <div class="background background-bd"></div>
                     <div class="logo logo-beyond-divinity"></div>
+                    <div class="logo logo-beyond-divinity active"></div>
                     <div class="games-bundle-item-description">
                         <a href="#" target="_blank">Beyond Divinity</a> (normal price $5.99)<br />
                         <strong>with 6 goodies and 4 language versions</strong>
@@ -56,11 +63,13 @@
                     <div class="games-bundle-item-status">
                         <span class="icon icon-check"></span>
                         <span class="icon icon-error"></span>
-                        Above average <strong>(from $7.67)</strong>
+                        Above average <strong></strong>
                     </div>
                 </div>
                 <div class="games-bundle-item">
+                    <div class="background background-d2"></div>
                     <div class="logo logo-divinity-2"></div>
+                    <div class="logo logo-divinity-2 active"></div>
                     <div class="games-bundle-item-description">
                         <a href="#" target="_blank">Divinity 2</a> (preorder, normal price $19.99)<br />
                         <strong>with 9 goodies and 7 language versions</strong>
@@ -68,11 +77,43 @@
                     <div class="games-bundle-item-status">
                         <span class="icon icon-check"></span>
                         <span class="icon icon-error"></span>
-                        Top Supporter <strong>(from $18.31)</strong>
+                        Top Supporter <strong></strong>
                     </div>
                 </div>
             </div>
-            <div class="games-bundle-price"></div>
+            <div class="games-bundle-price">
+                <div class="range-wrapper">
+                    <div class="range-marks">
+                        <div class="range-marks-item">
+                            <span class="range-marks-item-tooltip"></span>
+                        </div>
+                        <div class="range-marks-item">
+                            <span class="range-marks-item-tooltip"></span>
+                        </div>
+                    </div>
+                    <div class="range-input">
+                        <div class="range-input-start">$0.99</div>
+                        <div class="range-input-end">$49.99</div>
+
+                        <input value="13.00" type="range" min="0.99" max="49.99" step="0.5" />
+                        <div class="range-input-track"></div>
+                        <div class="range-input-fill"></div>
+
+                        <div class="range-value">
+                            <div class="range-value-input">
+                                $<input type="text" value="" />
+                            </div>
+                            <div class="range-value-button">
+                                <button>Checkout now</button>
+                            </div>
+                            <div class="range-value-info">
+                                <span class="icon icon-info"></span>
+                                Click the price to type it in manually
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="promo-info">
