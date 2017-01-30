@@ -115,11 +115,14 @@ const updateGames = ({ currentValue, element, state }) => {
  * updates position of related to slider elements
  * @param {Node} valueElement -- element which contains input with current value and checkout button
  * @param {Node} fillElement -- fill track element
+ * @param {Node} thumbElement -- thumb track element
  * @param {NodeList} gamesList -- collection with games nodes
  * @param {Number} currentValue
  * @param state -- getValues() function returns this state
  */
-const updateElements = ({ valueElement, fillElement, gamesList, currentValue, state }) => {
+const updateElements = ({
+    valueElement, fillElement, thumbElement, gamesList, currentValue, state,
+  }) => {
   if (currentValue < 7.5) {
     updatePosition({ element: valueElement, value: 7.49, max: state.max });
   } else if (currentValue > 43) {
@@ -127,6 +130,7 @@ const updateElements = ({ valueElement, fillElement, gamesList, currentValue, st
   } else {
     updatePosition({ element: valueElement, value: currentValue, max: state.max });
   }
+  updatePosition({ element: thumbElement, value: currentValue, max: state.max });
   updateWidth({ element: fillElement, value: currentValue, max: state.max });
   updateGames({ currentValue, element: gamesList, state });
 };
@@ -141,6 +145,7 @@ const initSlider = (wrapper) => {
   const input = wrapper.querySelector('[type=text]');
   const valueBox = wrapper.querySelector('.range-value');
   const fill = wrapper.querySelector('.range-input-fill');
+  const thumb = wrapper.querySelector('.range-input-thumb');
   const marks = wrapper.querySelectorAll('.range-marks-item');
   const games = wrapper.querySelectorAll('.games-bundle-item');
 
@@ -161,6 +166,7 @@ const initSlider = (wrapper) => {
 
   updateMarks({ wrapper: marks, state });
   updateValue({ element: input, value: state.current });
+  updatePosition({ element: thumb, value: state.current, max: state.max });
   updatePosition({ element: valueBox, value: state.current, max: state.max });
   updateWidth({ element: fill, value: state.current, max: state.max });
   updateGames({ currentValue: state.current, element: games, state });
@@ -172,6 +178,7 @@ const initSlider = (wrapper) => {
     updateElements({
       valueElement: valueBox,
       fillElement: fill,
+      thumbElement: thumb,
       gamesList: games,
       currentValue: value,
       state,
@@ -195,6 +202,7 @@ const initSlider = (wrapper) => {
     updateElements({
       valueElement: valueBox,
       fillElement: fill,
+      thumbElement: thumb,
       gamesList: games,
       currentValue,
       state,

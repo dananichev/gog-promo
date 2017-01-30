@@ -4,8 +4,8 @@
   --track-color: linear-gradient(to top, rgb(207,207,207) 0%, rgb(194,194,194) 100%);
   --thumb-color: #fff;
 
-  --thumb-height: 17px;
-  --thumb-width: 34px;
+  --thumb-height: 34px;
+  --thumb-width: 17px;
   --thumb-background: url(../../assets/slider-thumb.png) no-repeat left top;
 
   --track-width: 100%;
@@ -32,6 +32,10 @@ input[type=range] {
     outline: none;
   }
 
+  &::-ms-tooltip {
+    display: none;
+  }
+
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     position: relative;
@@ -53,27 +57,28 @@ input[type=range] {
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
-    height: var(--thumb-width);
-    width: var(--thumb-height);
-    background: var(--thumb-background);
+    height: var(--thumb-height);
+    width: var(--thumb-width);
+    background: transparent;
     cursor: pointer;
     margin-top: -10px;
   }
 
   &::-moz-range-thumb {
     border: none;
-    height: var(--thumb-width);
-    width: var(--thumb-height);
-    background: var(--thumb-background);
+    height: var(--thumb-height);
+    width: var(--thumb-width);
+    background: transparent;
     cursor: pointer;
   }
 
   &::-ms-thumb {
     border: none;
-    height: var(--thumb-width);
-    width: var(--thumb-height);
-    background: var(--thumb-background);
+    height: var(--thumb-height);
+    width: var(--thumb-width);
+    background: transparent;
     cursor: pointer;
+    overflow: visible;
   }
 
   &::-webkit-slider-runnable-track {
@@ -167,14 +172,15 @@ input[type=range] {
   }
 
   &-track,
+  &-thumb,
   &-fill {
     position: absolute;
     top: 0;
     left: 0;
-    height: var(--track-height);
   }
 
   &-track {
+    height: var(--track-height);
     width: var(--track-width);
     cursor: pointer;
     box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.75),inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
@@ -185,10 +191,20 @@ input[type=range] {
   }
 
   &-fill {
+    height: var(--track-height);
     width: 24.2%;
     background-image: linear-gradient(to top, rgb(124,169,0) 0%, rgb(173,201,0) 100%);
     box-shadow: inset 0px 1px 0px 0px rgba(231, 255, 0, 0.67);
     border-radius: 5px 0 0 5px;
+  }
+
+  &-thumb {
+    margin-left: -16px;
+    top: -10px;
+    height: var(--thumb-height);
+    width: var(--thumb-width);
+    background: url(../../assets/slider-thumb.png) no-repeat;
+    cursor: pointer;
   }
 }
 
@@ -288,6 +304,7 @@ input[type=range] {
     box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.35),inset 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     width: 7px;
     height: 7px;
+    pointer-events: none;
 
     &-tooltip {
       position: absolute;
