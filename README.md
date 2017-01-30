@@ -1,5 +1,10 @@
 # Notes
 
+* due to ``oninput`` event usage (for positioning different elements related to slider) only modern browsers are supported
+* i'm using ``CSS Next`` as preprocessor via ``POSTCSS``
+* both ``Babel`` and ``autoprefixer`` are using ``browserlist``
+* no mobile support - minimum width = 970px (yet?)
+
 ## Build 
 
 * run ``npm install``
