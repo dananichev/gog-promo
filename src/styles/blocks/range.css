@@ -304,7 +304,6 @@ input[type=range] {
     box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.35),inset 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     width: 7px;
     height: 7px;
-    pointer-events: none;
 
     &-tooltip {
       position: absolute;
@@ -314,6 +313,18 @@ input[type=range] {
       min-width: 80px;
       color: #808080;
       transform: translateX(-50%);
+    }
+
+    &-narrow {
+      & .range-marks-item-tooltip {
+        display: none;
+      }
+
+      &:hover {
+        & .range-marks-item-tooltip {
+          display: block;
+        }
+      }
     }
   }
 }

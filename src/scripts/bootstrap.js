@@ -14,7 +14,7 @@ const getValues = () => ({
   max: 49.99,
   marks: {
     average: 7.99,
-    top: 13.99,
+    top: 12.99,
   },
 });
 
@@ -66,11 +66,19 @@ const updateWidth = ({ element, value, max, offset }) => {
  */
 const updateMarks = ({ wrapper, state }) => {
   const marks = wrapper;
+  const average = marks[0];
+  const top = marks[1];
   updatePosition({ element: marks[0], value: state.marks.average, max: state.max, offset: -11 });
   updatePosition({ element: marks[1], value: state.marks.top, max: state.max, offset: -11 });
 
-  const averageTooltip = marks[0].querySelector('span');
-  const topTooltip = marks[1].querySelector('span');
+  if (state.marks.top - state.marks.average < 4.5) {
+    [].forEach.call(marks, (mark) => {
+      mark.classList.add('range-marks-item-narrow');
+    });
+  }
+
+  const averageTooltip = average.querySelector('span');
+  const topTooltip = top.querySelector('span');
   averageTooltip.innerText = marksTemplates.average.replace('%value%', state.marks.average.toString());
   topTooltip.innerText = marksTemplates.top.replace('%value%', state.marks.top.toString());
 };
