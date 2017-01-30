@@ -7,6 +7,7 @@ const marksTemplates = {
 };
 const gamesInfoTemplate = '(from $%value%)';
 
+/** simulate server request **/
 const getValues = () => ({
   current: 13.99,
   min: 0.99,
@@ -17,8 +18,20 @@ const getValues = () => ({
   },
 });
 
+/**
+ * @param {Number} value
+ * @param {Number} max
+ * @return {Number}
+ */
 const getPercent = ({ value, max }) => ((value * 100) / max);
 
+/**
+ *
+ * @param {Node} element
+ * @param {Number} value
+ * @param {Number} max
+ * @param {Number} offset -- offset in pixels
+ */
 const updatePosition = ({ element, value, max, offset }) => {
   const el = element;
   const percent = getPercent({ value, max });
@@ -29,6 +42,13 @@ const updatePosition = ({ element, value, max, offset }) => {
   }
 };
 
+/**
+ *
+ * @param {Node} element
+ * @param {Number} value
+ * @param {Number} max
+ * @param {Number} offset -- offset in pixels
+ */
 const updateWidth = ({ element, value, max, offset }) => {
   const el = element;
   const percent = getPercent({ value, max });
@@ -39,6 +59,11 @@ const updateWidth = ({ element, value, max, offset }) => {
   }
 };
 
+/**
+ * updates mark placement and text
+ * @param {Node} wrapper
+ * @param {Object} state -- getValues() function returns this state
+ */
 const updateMarks = ({ wrapper, state }) => {
   const marks = wrapper;
   updatePosition({ element: marks[0], value: state.marks.average, max: state.max, offset: -11 });
@@ -55,6 +80,12 @@ const updateValue = ({ element, value }) => {
   input.value = value;
 };
 
+/**
+ * updates games representation
+ * @param {Number} currentValue
+ * @param {Node} element
+ * @param {Object} state -- getValues() function returns this state
+ */
 const updateGames = ({ currentValue, element, state }) => {
   const bd = element[1];
   const d2 = element[2];
@@ -80,6 +111,14 @@ const updateGames = ({ currentValue, element, state }) => {
   }
 };
 
+/**
+ * updates position of related to slider elements
+ * @param {Node} valueElement -- element which contains input with current value and checkout button
+ * @param {Node} fillElement -- fill track element
+ * @param {NodeList} gamesList -- collection with games nodes
+ * @param {Number} currentValue
+ * @param state -- getValues() function returns this state
+ */
 const updateElements = ({ valueElement, fillElement, gamesList, currentValue, state }) => {
   if (currentValue < 7.5) {
     updatePosition({ element: valueElement, value: 7.49, max: state.max });
@@ -92,6 +131,10 @@ const updateElements = ({ valueElement, fillElement, gamesList, currentValue, st
   updateGames({ currentValue, element: gamesList, state });
 };
 
+/**
+ * inits slider
+ * @param {Node} wrapper -- dom element which contains required for slider elements
+ */
 const initSlider = (wrapper) => {
   const state = getValues();
   const range = wrapper.querySelector('[type=range]');
